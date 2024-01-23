@@ -11,6 +11,12 @@ function volume_sphere() {
   // Calculate the volume of the sphere
   var volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
 
+  // Check if the calculated volume is NaN
+  if (isNaN(volume)) {
+    alert("Error: Unable to calculate volume. Please check your input.");
+    return false; // Prevent form submission
+  }
+
   // Display the calculated volume in the volume field
   document.getElementById("volume").value = volume.toFixed(2);
 
