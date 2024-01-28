@@ -18,7 +18,8 @@ function volume_sphere() {
   }
 
   // Display the calculated volume in the volume field
-  document.getElementById("volume").value = volume.toFixed(2);
+  document.getElementById("volume").value = volume.toFixed(4);  // Round to 4 decimal places
+
 
   // Prevent the form from submitting
   return false;
