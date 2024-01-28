@@ -2,6 +2,9 @@ function volume_sphere() {
   // Get the radius value from the input field
   var radius = document.getElementById("radius").value;
 
+  // Log the radius to debug
+  console.log("Radius:", radius);
+
   // Validate if the input is a valid number
   if (isNaN(radius) || radius <= 0) {
     alert("Please enter a valid positive number for the radius.");
@@ -11,15 +14,18 @@ function volume_sphere() {
   // Calculate the volume of the sphere
   var volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
 
+  // Log the calculated volume to debug
+  console.log("Calculated Volume:", volume);
+
   // Check if the calculated volume is NaN
   if (isNaN(volume)) {
     alert("Error: Unable to calculate volume. Please check your input.");
+    console.error("Error calculating volume:", volume);
     return false; // Prevent form submission
   }
 
   // Display the calculated volume in the volume field
-  document.getElementById("volume").value = volume.toFixed(4);  // Round to 4 decimal places
-
+  document.getElementById("volume").value = volume.toFixed(2);
 
   // Prevent the form from submitting
   return false;
